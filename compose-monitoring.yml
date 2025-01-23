@@ -50,6 +50,7 @@ services:
     image: grafana/grafana:latest
     hostname: rpi-grafana
     restart: unless-stopped
+    user: root
     networks:
       - maestro_network
     ports:
