@@ -27,6 +27,7 @@ services:
   prometheus:
     image: prom/prometheus:v3.1.0
     hostname: prometheus
+    user: root
     volumes:
       - /home/pi/prometheus/config:/etc/prometheus/
       - /home/pi/prometheus/data:/prometheus
