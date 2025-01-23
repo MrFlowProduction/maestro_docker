@@ -1,0 +1,18 @@
+
+services:
+  rabbitmq:
+    image: rabbitmq:4.0-management
+    hostname: rabbitmq
+    restart: unless-stopped
+    ports:
+      - 5672:5672
+      - 15672:15672
+      - 1883:1883
+    networks:
+      - maestro_network
+    volumes:
+      - /etc/rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins
+
+networks:
+  maestro_network:
+    external: true
