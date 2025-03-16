@@ -14,7 +14,13 @@ services:
     
     volumes:
       - /etc/rabbitmq/enabled_plugins:/etc/rabbitmq/enabled_plugins
+      - rabbitmq_data:/var/lib/rabbitmq  # Tartós adatok
+      - rabbitmq_config:/etc/rabbitmq  # Konfigurációk
 
 networks:
   maestro_network:
     external: true
+
+volumes:
+  rabbitmq_data:
+  rabbitmq_config:
